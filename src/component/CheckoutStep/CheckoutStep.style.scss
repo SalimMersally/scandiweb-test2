@@ -1,0 +1,124 @@
+.steps {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: $default-secondary-light-color;
+}
+
+.step {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.stepLine {
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.stepLine .main {
+  border: 0px;
+  border-top: 5px solid;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.stepIndex {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0px 10px;
+}
+
+.reached {
+  background: linear-gradient(
+    to left,
+    $default-secondary-dark-color 50%,
+    $default-primary-base-color 50%
+  );
+  background-size: 200%;
+  background-position: 100% 0%;
+  animation: changeColor 1s 2s forwards;
+  color: $default-secondary-base-color;
+}
+
+.stepLine .reached {
+  border-top: 5px solid $default-primary-base-color;
+  animation: growHr 2s forwards;
+}
+
+.shrinkreached {
+  border-top: 5px solid $default-secondary-dark-color;
+  animation: shrinkHr 2s forwards;
+}
+
+.notReached {
+  background-color: $default-secondary-dark-color;
+}
+
+.stepLine .notReached {
+  border-top: 5px solid $default-secondary-dark-color;
+}
+
+@keyframes changeColor {
+  from {
+    background-position: 100% 0%;
+  }
+  to {
+    background-position: 0% 0%;
+  }
+}
+
+@keyframes growHr {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes shrinkHr {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+/* The below is the step name styles */
+
+.stepNames {
+  display: flex;
+  width: 100%;
+  background-color: $default-secondary-light-color;
+}
+
+.stepName {
+  flex-grow: 1;
+  display: flex;
+}
+
+.space {
+  flex-grow: 1;
+  border: 0px;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: 700;
+  width: 50px;
+  margin: 0px 10px;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+}
+
+.name p {
+  margin: 0px;
+}
